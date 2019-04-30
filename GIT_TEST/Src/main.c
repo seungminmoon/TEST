@@ -101,7 +101,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	 if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == 0)
+	 if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == 0)
 	 {
 		 while (1)
 		 {
@@ -109,11 +109,11 @@ int main(void)
 			 index = (index + 1) % 8;
 			 ByteDataWrite1(pattern);
 			 HAL_Delay(300);
-			 if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == 0)
+			 if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == 0)
 				 break;
 		 }
 	 }
-	 else if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == 0)
+	 else if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == 0)
 	 {
 		 while(1)
 		 {
@@ -121,7 +121,7 @@ int main(void)
 	 		 index = (index + 1) % 8;
 	 		 ByteDataWrite2(pattern);
 	 		 HAL_Delay(300);
-	 		 if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == 0)
+	 		 if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == 0)
 	 			break;
 		 }
 	 }
